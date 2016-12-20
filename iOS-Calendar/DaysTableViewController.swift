@@ -26,4 +26,16 @@ class DaysTableViewController : UITableViewController {
         cell.textLabel?.text = "\(indexPath.row + 1)"
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "DaysSegue") {
+            let selectedDayRow = tableView.indexPathForSelectedRow?.row
+            if let dest = segue.destination as? SingleDayTableViewController {
+                dest.title = "\(selectedDayRow! + 1)"
+                dest.monthNumber = monthNumber
+                dest.dayNumber = selectedDayRow! + 1
+            }
+            
+        }
+    }
 }

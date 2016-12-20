@@ -11,7 +11,13 @@ import UIKit
 
 class SingleDayTableViewController : UITableViewController {
     
+    var monthNumber = -1
+    var dayNumber = -1
     var events: [String] = Array()
+    
+    override func viewDidLoad() {
+        print("\(monthNumber)" + "-" + "\(dayNumber)")
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
