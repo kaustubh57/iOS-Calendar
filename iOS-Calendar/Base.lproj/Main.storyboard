@@ -98,6 +98,13 @@
                             <outlet property="delegate" destination="0jr-gb-dnL" id="OFa-4b-j7v"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="nyk-yL-n4n">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PiV-l5-ebS">
+                            <connections>
+                                <action selector="addButtonPressedWithSender:" destination="0jr-gb-dnL" id="Oup-DT-wUj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cN5-GE-nig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

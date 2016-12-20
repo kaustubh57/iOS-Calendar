@@ -19,6 +19,24 @@ class SingleDayTableViewController : UITableViewController {
         print("\(monthNumber)" + "-" + "\(dayNumber)")
     }
     
+    @IBAction func addButtonPressed(sender: UIBarButtonItem) {
+        let newEvent = "Test Event \(events.count + 1)"
+        events.append(newEvent)
+        tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            events.remove(at: indexPath.row)
+            let sections = NSIndexSet (index: 0)
+            tableView.reloadSections(sections as IndexSet, with: .fade)
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
