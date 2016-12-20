@@ -26,4 +26,15 @@ class MonthsTableViewController : UITableViewController {
         cell.textLabel?.text = monthDataSet[indexPath.row]
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "MonthsSegue") {
+            let selectedMonthRow = tableView.indexPathForSelectedRow?.row
+            if let dest = segue.destination as? DaysTableViewController {
+                dest.title = monthDataSet[selectedMonthRow!]
+                dest.monthNumber = selectedMonthRow! + 1
+            }
+            
+        }
+    }
 }

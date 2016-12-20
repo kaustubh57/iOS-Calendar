@@ -11,6 +11,8 @@ import UIKit
 
 class DaysTableViewController : UITableViewController {
     
+    var monthNumber = -1
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
