@@ -16,7 +16,7 @@ class SingleDayTableViewController : UITableViewController {
     var events: [AnyObject] = Array()
     
     override func viewDidLoad() {
-        print("\(monthNumber)" + "-" + "\(dayNumber)")
+//        print("\(monthNumber)" + "-" + "\(dayNumber)")
     }
     
     @IBAction func addButtonPressed(sender: UIBarButtonItem) {
@@ -27,7 +27,8 @@ class SingleDayTableViewController : UITableViewController {
         events.append(encodedCE as AnyObject)
         let defaults = UserDefaults.standard
         defaults.set(events, forKey: defaultsKey)
-        tableView.reloadData()
+        let sections = NSIndexSet (index: 0)
+        tableView.reloadSections(sections as IndexSet, with: .fade)
     }
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -37,6 +38,9 @@ class SingleDayTableViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             events.remove(at: indexPath.row)
+            let defaults = UserDefaults.standard
+            let defaultsKey = "\(monthNumber)" + "-" + "\(dayNumber)"
+            defaults.set(events, forKey: defaultsKey)
             let sections = NSIndexSet (index: 0)
             tableView.reloadSections(sections as IndexSet, with: .fade)
         }
@@ -53,7 +57,6 @@ class SingleDayTableViewController : UITableViewController {
         if let arrayOfEvents = arrayOfEvents {
             events = arrayOfEvents as [AnyObject]
         }
-        
         return events.count
     }
     
