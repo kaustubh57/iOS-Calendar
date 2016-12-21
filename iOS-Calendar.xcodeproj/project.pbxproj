@@ -18,6 +18,7 @@
 		2B7863261E08F3BE001831CC /* DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7863251E08F3BE001831CC /* DaysTableViewController.swift */; };
 		2B7863281E08F3D3001831CC /* SingleDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7863271E08F3D3001831CC /* SingleDayTableViewController.swift */; };
 		2B78632A1E08F3FC001831CC /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7863291E08F3FC001831CC /* EventViewController.swift */; };
+		2B78632C1E091587001831CC /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78632B1E091587001831CC /* CalendarEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2B7863251E08F3BE001831CC /* DaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysTableViewController.swift; sourceTree = "<group>"; };
 		2B7863271E08F3D3001831CC /* SingleDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDayTableViewController.swift; sourceTree = "<group>"; };
 		2B7863291E08F3FC001831CC /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		2B78632B1E091587001831CC /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				2B7862FC1E08C2E2001831CC /* Assets.xcassets */,
 				2B7862FE1E08C2E2001831CC /* LaunchScreen.storyboard */,
 				2B7863011E08C2E2001831CC /* Info.plist */,
+				2B78632B1E091587001831CC /* CalendarEvent.swift */,
 			);
 			path = "iOS-Calendar";
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				2B7862F61E08C2E2001831CC /* AppDelegate.swift in Sources */,
 				2B7863241E08F37C001831CC /* MonthsTableViewController.swift in Sources */,
 				2B78632A1E08F3FC001831CC /* EventViewController.swift in Sources */,
+				2B78632C1E091587001831CC /* CalendarEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
