@@ -68,4 +68,18 @@ class SingleDayTableViewController : UITableViewController {
         }
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "EventSegue") {
+            let selectedDayRow = tableView.indexPathForSelectedRow?.row
+            if let dest = segue.destination as? EventViewController {
+                let calendarEvent = NSKeyedUnarchiver.unarchiveObject(with: events[selectedDayRow!] as! Data) as! CalendarEvent
+                dest.title = "Event: \(selectedDayRow! + 1)"
+                dest.monthNumber = monthNumber
+                dest.dayNumber = dayNumber
+                dest.eventDetails = "Event Details: " + calendarEvent.title
+            }
+            
+        }
+    }
 }
